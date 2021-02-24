@@ -1,13 +1,15 @@
 FROM nginx
 
-RUN apt update -y \
-	&& apt install git -y \
-	&& cd /usr/share \
-	&& rm -rf nginx \
-	&& git clone https://github.com/vulturem/nginx.git 
+#RUN apt update -y \
+#	&& apt install git -y \
+#	&& cd /usr/share \
+#	&& rm -rf nginx \
+#	&& git clone https://github.com/vulturem/nginx.git 
 
+RUN ls -lah
+COPY ./html/index.html /usr/share/nginx/html
 
-WORKDIR /usr/share/ 
+#WORKDIR /usr/share/nginx/html
 
 EXPOSE 80
 
