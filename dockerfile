@@ -7,8 +7,9 @@ FROM nginx
 #	&& git clone https://github.com/vulturem/nginx.git 
 
 # RUN ls -lah
-RUN mkdir /usr/share/nginx/html
-COPY ./html/index.html /usr/share/nginx/html/.
+COPY ./html/index.html /usr/share/nginx/html/
+
+RUN ls -la /usr/share/nginx/html/
 
 #WORKDIR /usr/share/nginx/html
 
